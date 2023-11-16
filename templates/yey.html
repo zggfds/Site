@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style (4).css')}}" />
+        <title>Регистрация</title>
+    </head>
+    <body>
+        <h1>Регистрация</h1>
+        <form method="POST" action="/run">
+            <input class="name" name="name" placeholder="Введите ваше имя" />
+
+            <input class="pass" name="pass" placeholder="Введи пароль" type="password" />
+
+            <input type="submit" value="Зарегистрироваться" />
+        </form>
+        <div class="log">Войти</div>
+        <div class="restore">Восстановить пароль</div>
+    </body>
+</html>

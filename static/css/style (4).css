@@ -1,0 +1,21 @@
+.column{
+  display: flex;
+  justify-content: space-around;
+}
+.pic{
+  width: 250px;
+  height: 140px;
+}
+.one{
+  width: 250px;
+  height: 600px;
+}
+.red{
+  background: red;
+}
+.green{
+  background: green;
+}
+.yellow{
+  background: #FFC600;
+}

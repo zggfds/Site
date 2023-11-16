@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Профиль Александра Орехова</title>
+    <form method="POST">
+        <input class="name" name="name" placeholder="Введите ваше имя">
+        <a href="http://127.0.0.1:5000/sec">
+            <div class="button">
+                <div
+                        class="text_button">Зарегистрироваться
+                </div>
+            </div>
+        </a>
+    </form>
+    <ul>
+        <h2>Нужно купить</h2>
+        {% for i in spisok%}
+        <li>{{i}}</li>
+        {% endfor %}
+    </ul>
+
+    {% for imge in imgy %}
+    <img src="{{imge}}" alt="" >
+    {% endfor %}
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('https://rosspectr.ru/wp-content/uploads/f/b/9/fb91fb7fcf48f3d92b15f904bd1d5ef4.jpeg');
+            background-color: #f0f0f0;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-info {
+            margin-left: 20px;
+        }
+
+        img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        #anecdote {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile">
+        <img src="https://rosspectr.ru/wp-content/uploads/f/b/9/fb91fb7fcf48f3d92b15f904bd1d5ef4.jpeg" alt="Фото Александра Орехова">
+        <div class="profile-info">
+            <h1>привет {{name.name}}</h1>
+            <h2>тебе {{name.age}}</h2>
+        </div>
+    </div>
+    <div id="anecdote">
+        <h3>Случайный анекдот:</h3>
+        <p id="anecdote-text">Загружаю анекдот...</p>
+    </div>
+    <script>
+        const anecdotes = [
+            '{{name}}',
+            "Почему программисты так редко выходят из дома? Потому что там нет никакого места как дом!",
+            "Какой язык программирования самый умный? Python, потому что он всегда ищет свои ошибки в ваших программах и умеет их находить!",
+            "Зачем программисту папа с двумя детьми? Чтобы было, с кем поиграть в камень-ножницы-бумага во время перерыва от кодирования!",
+            // Добавьте здесь другие анекдоты
+        ];
+
+        function getRandomAnecdote() {
+            const randomIndex = Math.floor(Math.random() * anecdotes.length);
+            return anecdotes[randomIndex];
+        }
+
+        function updateAnecdote() {
+            const anecdoteElement = document.getElementById("anecdote-text");
+            anecdoteElement.textContent = getRandomAnecdote();
+        }
+
+        // Обновляем анекдот при загрузке страницы
+        updateAnecdote();
+
+        // Обновляем анекдот при клике на него
+        const anecdoteContainer = document.getElementById("anecdote");
+        anecdoteContainer.addEventListener("click", updateAnecdote);
+    </script>
+</body>
+</html>

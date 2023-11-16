@@ -1,0 +1,29 @@
+.red{
+ width: 300px;
+ height: 150px;
+ background: #F5001D
+}
+
+.green{
+ width: 300px;
+ height: 150px;
+ background: #34D800;
+}
+
+.two{
+ width: 300px;
+ height: 150px;
+ background: #06266F;
+
+ .text{
+  width: 300px;
+  height: 150px;
+  background: #06266F;
+
+
+}
+
+body{
+  display: flex;
+  justify-content: space-around;
+}
